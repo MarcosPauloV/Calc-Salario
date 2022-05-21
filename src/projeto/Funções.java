@@ -61,6 +61,24 @@ public class Funções {
         
     }
     
-  
+    public static double LerDouble(String Titulo, String msg){
+        
+        try{
+            
+            String S = JOptionPane.showInputDialog(null,Titulo,msg,JOptionPane.QUESTION_MESSAGE);///Função que apresenta caixa de dialogo na tela
+
+            double numero = Double.parseDouble(S);//Função que converte de STRING para INT
+
+               return numero;
+               
+        }catch(NumberFormatException Erro){
+             System.err.println("Erro de conversão de inteiro" + Erro.getMessage());
+            return -1;
+            
+            
+        }
+    }
     
-}
+}   
+
+    

@@ -26,12 +26,12 @@ public class Departamento {
         switch(op){
             case 1:
                 Mensalista objM = new Mensalista();
-                objM.setALL(msm, msm, msm, 0);
+                objM.setALL(Fun.LerString("Digite o nome: ",msm), Fun.LerString("Digite a cidade: ",msm), Fun.LerString("Digite o Estado: ",msm), Fun.LerDouble("Digite a quantidade de horas: ",msm), Fun.LerDouble("Digite o valor do Salario: ",msm));
                 objFun.add(objM);
             case 2:
-            
-                
-                
+                Comissionado objC = new Comissionado();
+                objC.setALL(Fun.LerString("Digite o nome: ",msm), Fun.LerString("Digite a cidade: ",msm), Fun.LerString("Digite o Estado: ",msm), Fun.LerDouble("Digite a quantidade de horas: ",msm), Fun.LerDouble("Digite o valor da Comissão: ",msm));
+                objFun.add(objC);
             case 3:
                 
                 

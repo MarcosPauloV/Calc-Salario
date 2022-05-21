@@ -13,6 +13,12 @@ public class Mensalista extends Funcionario{
         this.Salario = Salario;
     }
     
-    
+    public void setALL(String pNome, String pCidade, String pEstado, double pQauntHoras, double pSalario){
+        
+        setALL(pNome, pCidade, pEstado, pQauntHoras);
+        
+        setSalario(pSalario);
+        
+}
     
 }
