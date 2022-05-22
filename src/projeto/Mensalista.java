@@ -1,6 +1,6 @@
 package projeto;
 
-public class Mensalista extends Funcionario{
+public class Mensalista extends Funcionario implements CalcSalario{
 
  
     private double Salario;
@@ -19,6 +19,11 @@ public class Mensalista extends Funcionario{
         
         setSalario(pSalario);
         
-}
+    }
+    
+    @Override
+    public double calcSalario() {
+        return getSalario();
+    }
     
 }
