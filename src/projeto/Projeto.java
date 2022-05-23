@@ -12,7 +12,7 @@ public class Projeto {
        int op, op2, op3 = 0;
        do{
            
-           op=Fun.lerInt("1- Cadastro de Departamento\n 2- Cadastro de Funcionario\n 3- Listar Salarios por departamento\n 4- Todos os Salarios do departamento\n 5- Todos os Salarios 6- Sair\n Selecione a opção: ", msg);
+           op=Fun.lerInt("1- Cadastro de Departamento\n 2- Cadastro de Funcionario\n 3- Listar Salarios por departamento\n 4- Todos os Salarios\n 5- Sair\n Selecione a opção: ", msg);
            
            switch(op){
                
@@ -23,25 +23,41 @@ public class Projeto {
                    break;
                    
                case 2:
+                   String mensage = " ";
+                   
                    for(int i=0; i < Dep.size(); i++){
-                       op3 = Fun.lerInt(i + " - " + Dep.get(i).getDescricao(), msg);
+                       mensage +=(" " +  i + " - " + Dep.get(i).getDescricao()+"\n");   
                    }
+                   op3 = Fun.lerInt(mensage, msg);
                    Dep.get(op3).AddFuncionario();
                 break;
                 
                case 3:
+                   String mensage2 = " ";
                    
+                   for(int i=0; i < Dep.size(); i++){
+                       mensage2 +=(" " +  i + " - " + Dep.get(i).getDescricao()+"\n");   
+                   }
+                   op3 = Fun.lerInt(mensage2, msg);
+                   Dep.get(op3).ListarTodosOsSalario();
                    break;
                case 4:
+                   String LTDS = " ";
+                   for(int i = 0; i < Dep.size(); i++){
+                      LTDS += Dep.get(i).getDescricao() + "\n";
+                      LTDS += Dep.get(i).ListarTodosOsSalario1() + "\n";
+                   }
+                   
+                   Fun.ImprimirString(LTDS);
                    
                    break;
                case 5:
                    
-                   break;
-               case 6:
-                   
                    System.exit(0);
                    break;
+              
+                   
+                  
            }
                
                

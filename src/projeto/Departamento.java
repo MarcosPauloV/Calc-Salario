@@ -10,7 +10,19 @@ public class Departamento {
     private int cont;
 
     /* Geter e Setter */
+
+    public Departamento(String pDescricao, double pValorHora) {
+        this.Descricao = pDescricao;
+        this.ValorHora = pValorHora;
+        objFun = new ArrayList();
+        cont = 0;
+    }
     
+    public Departamento(){
+        objFun = new ArrayList();
+        cont = 0;
+    }
+   
     public String getDescricao() {
         return Descricao;
     }
@@ -25,13 +37,6 @@ public class Departamento {
 
     public void setValorHora(Double ValorHora) {
         this.ValorHora = ValorHora;
-    }
-    
-    public Departamento() {
-       this.Descricao = Descricao;
-       this.ValorHora = ValorHora;
-       this.objFun = objFun;
-       this.cont = 0;
     }
     
     public void CadastroDep(String pDescricao, Double pValorHora) {
@@ -76,31 +81,70 @@ public class Departamento {
     
     
     public void ListarTodosOsSalario(){
+        
         Mensalista men = new Mensalista();
         Comissionado com = new Comissionado();
         Horista hora = new Horista();
         Funções Fun = new Funções();
+        String Str = " ";
         
         for(int i = 0; i < objFun.size(); i++){
             
             if(objFun.get(i).getClass() == men.getClass()){
               men = (Mensalista) objFun.get(i);
-              Fun.ImprimirString("O funcionario: " + men.getNome() + "Ganha: " + men.calcSalario());
+              Str += ("O funcionario: " + men.getNome() + ", Ganha: " + men.calcSalario()+"\n");
               
             }
             
             if(objFun.get(i).getClass() == com.getClass()){
                com = (Comissionado) objFun.get(i);
-               Fun.ImprimirString("O funcionario: " + com.getNome() + "Ganha: " + com.calcSalario());
+               Str +=("O funcionario: " + com.getNome() + ", Ganha: " + com.calcSalario()+"\n");
                 
             }
             
             if(objFun.get(i).getClass() == hora.getClass()){
                hora = (Horista) objFun.get(i);
-               Fun.ImprimirString("O funcionario: " + hora.getNome() + "Ganha: " + hora.calcSalario());
+               Str +=("O funcionario: " + hora.getNome() + ", Ganha: " + hora.calcSalario()+"\n");
             }
             
+            
+            
         }
+        Fun.ImprimirString(Str);
+    }
+    
+    public String ListarTodosOsSalario1(){
+        
+        Mensalista men = new Mensalista();
+        Comissionado com = new Comissionado();
+        Horista hora = new Horista();
+        Funções Fun = new Funções();
+        String Str = " ";
+        
+        for(int i = 0; i < objFun.size(); i++){
+            
+            if(objFun.get(i).getClass() == men.getClass()){
+              men = (Mensalista) objFun.get(i);
+              Str += ("O funcionario: " + men.getNome() + ", Ganha: " + men.calcSalario()+"\n");
+              
+            }
+            
+            if(objFun.get(i).getClass() == com.getClass()){
+               com = (Comissionado) objFun.get(i);
+               Str +=("O funcionario: " + com.getNome() + ", Ganha: " + com.calcSalario()+"\n");
+                
+            }
+            
+            if(objFun.get(i).getClass() == hora.getClass()){
+               hora = (Horista) objFun.get(i);
+               Str +=("O funcionario: " + hora.getNome() + ", Ganha: " + hora.calcSalario()+"\n");
+            }
+            
+            
+            
+        }
+        
+        return Str;
     }
        
 }
